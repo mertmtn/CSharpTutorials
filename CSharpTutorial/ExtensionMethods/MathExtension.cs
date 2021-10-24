@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace MathExtension
 {
     public static class MathExtension
@@ -32,6 +34,11 @@ namespace MathExtension
         {
             return input > 0 ? true:false;
         }
- 
+
+        public static double GetNumberOfDigits(this double input)
+        {
+            float basamakSayisi = (float)Math.Floor(Math.Log10(Math.Abs(input)) + 1);
+            return float.IsInfinity(basamakSayisi) ? 1 : basamakSayisi;
+        } 
     }
 }

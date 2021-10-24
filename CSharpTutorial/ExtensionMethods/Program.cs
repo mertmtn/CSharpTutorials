@@ -2,20 +2,22 @@
 using MathExtension;
 using StringExtension;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ExtensionMethods
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-
-            Console.WriteLine("String Extension");           
+            Console.WriteLine("String Extension");
             string cumle = "mert metin";
-            Console.WriteLine("ToUpperFirstCharacter():"+cumle.ToUpperFirstCharacter());
+            Console.WriteLine("ToUpperFirstCharacter():" + cumle.ToUpperFirstCharacter());
             Console.WriteLine("-----------------------------------------");
 
-            Console.WriteLine("DateTime Extension");            
+            Console.WriteLine("DateTime Extension");
             DateTime tarih = DateTime.Now;
             Console.WriteLine(tarih.DateWithTime());
             Console.WriteLine("-----------------------------------------");
@@ -48,8 +50,11 @@ namespace ExtensionMethods
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("IsPositive:{0}", number.IsPositive());
             Console.WriteLine("IsNegative:{0}", number.IsNegative());
-            Console.ReadLine();
 
+            Console.WriteLine("Digit Number:{0}", number.GetNumberOfDigits());
+            Console.ReadLine();
         }
+
+     
     }
 }
