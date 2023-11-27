@@ -1,5 +1,4 @@
-﻿using System;
- 
+﻿using System; 
 
 namespace DateTimeExtension
 {
@@ -25,5 +24,20 @@ namespace DateTimeExtension
         {
             return input.ToString("dd MM yyyy");
         }
+
+        public static int GetQuarterWithSwitch(this DateTime dateTime)
+        {
+            return dateTime.Month switch
+            {
+                12 or 11 or 10 => 4,
+                9 or 8 or 7 => 3,
+                6 or 5 or 4 => 2,
+                3 or 2 or 1 => 1,
+                _ => 0,
+            };
+        }
+
+        public static int GetQuarterWithMathCalculations(this DateTime dateTime) => (dateTime.Month - 1) / 3 + 1;
+
     }
 }
